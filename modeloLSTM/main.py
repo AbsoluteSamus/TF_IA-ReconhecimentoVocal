@@ -1,10 +1,11 @@
 import tkinter as tk
 from tkinter import messagebox
-from Twilio_Whats import enviar_mensagem_whatsapp
-from Reconhecimento import reconhecer_audio
-from train import censurar_frase
+from whatsmsg import enviar_mensagem_whatsapp
+from voice import reconhecer_audio
+from treinoModel import censurar_frase
 
 def processar_frase():
+    messagebox.showinfo("Mensagem", "DIGA ALGO")
     texto_reconhecido = reconhecer_audio()
     
     if texto_reconhecido:
@@ -14,7 +15,7 @@ def processar_frase():
         # Configuração das credenciais do Twilio
         account_sid = 'AC64c7ec8bb74c0d57612b17238b92d846'
         auth_token = '3ac98e118c95dbc72353d2e581bdb372'
-        from_number = 'whatsapp:+18149294919'  # Número do sandbox do Twilio
+        from_number = 'whatsapp:+14155238886'  # Número do sandbox do Twilio
         to_number = 'whatsapp:+558694859177'  # Número de destino com o código do país
         
         try:
